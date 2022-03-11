@@ -27,7 +27,7 @@
         android:src="@drawable/ic_baseline_arrow_drop_down_24" />
 
     <EditText
-        android:id="@+id/edittext"
+        android:id="@+id/edit_text"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_toEndOf="@+id/img_drop_down"

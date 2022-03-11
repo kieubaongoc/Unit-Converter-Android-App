@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(MainActivity.this, categoryAdapter.getItem(position).getName(), Toast.LENGTH_SHORT).show();
-                editText = (EditText) view.findViewById(R.id.edittext);
+                editText = (EditText) view.findViewById(R.id.edit_text);
 
                 rbMetre.setOnClickListener(new View.OnClickListener() {
                     @Override
