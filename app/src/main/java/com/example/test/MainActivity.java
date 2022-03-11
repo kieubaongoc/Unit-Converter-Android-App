@@ -2,6 +2,7 @@ package com.example.test;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.icu.number.Precision;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
@@ -15,7 +16,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Formatter;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -64,14 +68,15 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, "Please enter value", Toast.LENGTH_SHORT).show();
                             } else {
                                 Double metreConvert = Double.parseDouble(metreValueInput);
+                                NumberFormat formatter = new DecimalFormat("#0.00");
 
                                 Double CentimetreConvert = metreConvert * 100;
                                 Double FootConvert = metreConvert * 3.2808;
                                 Double InchConvert = metreConvert * 39.370;
 
-                                tvResult1.setText(String.format("%.2f", CentimetreConvert));
-                                tvResult2.setText(String.format("%.2f", FootConvert));
-                                tvResult3.setText(String.format("%.2f", InchConvert));
+                                tvResult1.setText(formatter.format(CentimetreConvert));
+                                tvResult2.setText(formatter.format(FootConvert));
+                                tvResult3.setText(formatter.format(InchConvert));
                                 tvShow1.setText("Centimetre");
                                 tvShow2.setText("Foot");
                                 tvShow3.setText("Inch");
