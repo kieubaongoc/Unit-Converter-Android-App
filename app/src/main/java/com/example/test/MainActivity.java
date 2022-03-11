@@ -96,12 +96,13 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, "Please enter value", Toast.LENGTH_SHORT).show();
                             } else {
                                 Double celciusConvert = Double.parseDouble(celciusValueInput);
+                                NumberFormat formatter = new DecimalFormat("#0.00");
 
                                 Double FahConvert = celciusConvert * 1.8000 + 32.00;
                                 Double KelvinConvert = celciusConvert + 273.15;
 
-                                tvResult1.setText(String.format("%.2f", FahConvert));
-                                tvResult2.setText(String.format("%.2f", KelvinConvert));
+                                tvResult1.setText(formatter.format(FahConvert));
+                                tvResult2.setText(formatter.format(KelvinConvert));
                                 tvResult3.setText(" ");
                                 tvShow1.setText("Fahrenheit");
                                 tvShow2.setText("Kelvin");
@@ -122,14 +123,15 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, "Please enter value", Toast.LENGTH_SHORT).show();
                             } else {
                                 Double kgConvert = Double.parseDouble(kgValueInput);
+                                NumberFormat formatter = new DecimalFormat("#0.00");
 
                                 Double GramConvert = kgConvert * 1000;
                                 Double OunceConvert = kgConvert * 35.274;
                                 Double PoundConvert = kgConvert * 2.20462;
 
-                                tvResult1.setText(String.format("%.2f", GramConvert));
-                                tvResult2.setText(String.format("%.2f", OunceConvert));
-                                tvResult3.setText(String.format("%.2f", PoundConvert));
+                                tvResult1.setText(formatter.format(GramConvert));
+                                tvResult2.setText(formatter.format(OunceConvert));
+                                tvResult3.setText(formatter.format(PoundConvert));
                                 tvShow1.setText("Gram");
                                 tvShow2.setText("Ounce(Oz)");
                                 tvShow3.setText("Pound(lb)");
