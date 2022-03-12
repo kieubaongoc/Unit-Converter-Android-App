@@ -2,16 +2,11 @@ package com.example.test;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.icu.number.Precision;
 import android.os.Bundle;
-import android.text.Editable;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,7 +14,6 @@ import android.widget.Toast;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Formatter;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -46,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         tvResult1 = (TextView) findViewById(R.id.tv_result1);
         tvResult2 = (TextView) findViewById(R.id.tv_result2);
         tvResult3 = (TextView) findViewById(R.id.tv_result3);
+        editText = (EditText) findViewById(R.id.edit_text);
         rbMetre = findViewById(R.id.radiobutton_metre);
         rbCelcius = findViewById(R.id.radiobutton_celcius);
         rbKilograms = findViewById(R.id.radiobutton_kilograms);
@@ -57,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(MainActivity.this, categoryAdapter.getItem(position).getName(), Toast.LENGTH_SHORT).show();
-                editText = (EditText) view.findViewById(R.id.edit_text);
 
                 rbMetre.setOnClickListener(new View.OnClickListener() {
                     @Override
